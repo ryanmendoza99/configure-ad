@@ -30,7 +30,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 2: Ensure Connectivity Between the Client and Domain Controller 
 - Step 3: Install Active Directory 
 - Step 4: Create an Admin/Normal User Account in AD
-- Step 5: Join Client-1 to your domain
+- Step 5: Join Client-1 in' your domain
 - Step 6: Setup Remote Desktop for non-administrative users on Client -1
 - Step 7: Create a Bunch of Additional Users and Attempt to Log Into Client-1 With One of the Users
 - FINISH.
@@ -41,22 +41,63 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h2>Step 1: Set up and create resources in Azure </h2>
+
+  - Create RG->Create VM (Windows Server 2022)-> Name DC1 
+- Take note of the RG and Vnet that get created at this time
+- Set DC NIC private IP to static-> Create the client VM (Windows 10) named - "Client11"-> Use RG and Vnet created before-> Ensure both VMS are in the same Vnet (check the topology with Network Watcher
 </p>
 <br />
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h2>Step 2: Ensure Connectivity between the client and Domain Controller </h2>
+
+  - Login to Client-1 with Remote Desktop and ping DC1 private IP address with ping-t <ip address>(perpetual ping)
+
+- Login to the Domain Controller and enable ICMPv4 in on the local windows Firewall
+
+- Check back at Client-1 to see the ping succeed 
+
+
 </p>
 <br />
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h2>Step 3: Install Active Directory Domain Services </h2>
+
+  - Login to DC-1 and install Active Directory Domain Services
+
+  - Promote as a DC: Setup a new forest as mydomain.com(rememer)
+
+  - Restart -> Log back into DC-1 as user
+
+
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+<p>
+<h2>Step 4: Create an Admin and Normal User Account in AD </h2>
+
+  - In Active Directory Users and Computers (ADUC), create and Organizational United (Ou) called "_EMPLOYEES"
+
+  - Create a new OU named "_ADMINS"
+
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
