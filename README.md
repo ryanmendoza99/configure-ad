@@ -17,6 +17,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Remote Desktop
 - Active Directory Domain Services
 - PowerShell
+- Github
 
 <h2>Operating Systems Used </h2>
 
@@ -25,10 +26,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Set up and create resources in Azure
+- Step 2: Ensure Connectivity Between the Client and Domain Controller 
+- Step 3: Install Active Directory 
+- Step 4: Create an Admin/Normal User Account in AD
+- Step 5: Join Client-1 to your domain
+- Step 6: Setup Remote Desktop for non-administrative users on Client -1
+- Step 7: Create a Bunch of Additional Users and Attempt to Log Into Client-1 With One of the Users
+- FINISH.
 
 <h2>Deployment and Configuration Steps</h2>
 
